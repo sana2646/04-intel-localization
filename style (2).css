@@ -1,0 +1,252 @@
+Now click on style.css, press Cmd+A to select all, and paste this:
+css/* Base Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #0068b5;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.hero img {
+  filter: brightness(0) invert(1);
+}
+
+/* Timeline Section */
+.timeline-section {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: max-content;
+  padding: 20px;
+}
+
+/* Timeline Cards */
+.timeline-card {
+  width: 260px;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 104, 181, 0.3);
+}
+
+.timeline-card h2 {
+  background-color: #0068b5;
+  color: white;
+  padding: 8px 16px;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.timeline-card h3 {
+  padding: 12px 16px 4px;
+  font-size: 1rem;
+  color: #0068b5;
+  margin: 0;
+}
+
+.timeline-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.timeline-card p {
+  padding: 0 16px 16px;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  margin: 0;
+}
+
+.timeline-card:hover p {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* 3-Column Section */
+.three-col-section {
+  background-color: white;
+}
+
+.three-col-section h2 {
+  color: #0068b5;
+  font-size: 2rem;
+}
+
+.commitment-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commitment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,104,181,0.15);
+}
+
+.commitment-icon {
+  font-size: 2.5rem;
+  color: #0068b5;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.commitment-card h3 {
+  color: #0068b5;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.commitment-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.learn-more-btn {
+  background-color: #0068b5;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 24px;
+  margin-top: 12px;
+}
+
+.learn-more-btn:hover {
+  background-color: #004f8a;
+}
+
+/* Subscription Section */
+.subscription-section {
+  background-color: #f0f7ff;
+}
+
+.subscription-section h2 {
+  color: #0068b5;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.subscription-section .form-control {
+  border-radius: 8px;
+  border: 1px solid #0068b5;
+  padding: 10px 14px;
+}
+
+.subscription-section .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(0,104,181,0.25);
+  border-color: #0068b5;
+}
+
+.subscription-section .btn-primary {
+  background-color: #0068b5;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.subscription-section .btn-primary:hover {
+  background-color: #004f8a;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #333;
+  text-align: start;
+  display: block;
+}
+
+/* Footer */
+footer {
+  background-color: #0068b5;
+  color: white;
+  margin-top: 0;
+}
+
+footer a {
+  color: #cce4ff;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* RTL Support */
+[dir="rtl"] .timeline-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+[dir="rtl"] .form-check {
+  padding-right: 1.5em;
+  padding-left: 0;
+}
+
+[dir="rtl"] .form-check-input {
+  float: right;
+  margin-right: -1.5em;
+  margin-left: 0;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .timeline-card {
+    width: 90%;
+    max-width: 340px;
+  }
+
+  .timeline-section {
+    overflow-x: hidden;
+    scroll-snap-type: none;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
